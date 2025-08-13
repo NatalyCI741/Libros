@@ -1,0 +1,38 @@
+3. Conectar a MySQL
+Haz clic en "Abrir" para establecer la conexión
+
+4. Crear la base de datos
+Una vez conectado, ejecuta esta consulta SQL:
+CREATE DATABASE bdinventario CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; -SI YA LA CREASTE PROCEDA AL OTRO PASOS SI FUE MANUALMENTE CREADA
+
+
+env: (Archivo de configuración de entorno)
+5.Actualizar tu archivo .env
+En tu proyecto Laravel, edita el archivo .env con estos datos:
+
+APP_URL=127.0.0.1.8000
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3320
+DB_DATABASE="#Nombre de la base de datos"  DB_USERNAME=root
+DB_PASSWORD=
+
+6. Ejecutar migraciones
+En tu terminal, dentro del proyecto Laravel:
+
+
+composer install: Instala todas las dependencias PHP del proyecto definidas en composer.json y 
+Crea la carpeta vendor/ con todas las librerías necesarias
+
+# Verificar que la conexión funcione
+php artisan migrate:status
+
+# Ejecutar las migraciones para crear las tablas
+php artisan migrate
+
+#Inicia el servidor de desarrollo local de Laravel
+php artisan serve
+
+
+->Por defecto ejecuta en http://127.0.0.1:8000
